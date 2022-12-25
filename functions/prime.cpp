@@ -16,11 +16,8 @@ bool isPrime(int n)
             return 0;
         }
 
-        else
-        {
-            return 1;
-        }
-    }
+      }
+      return 1;
 }
 
 int main()

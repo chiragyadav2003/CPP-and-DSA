@@ -2,19 +2,20 @@
 
 using namespace std;
 
-int ap(int n){
+int ap(int n)
+{
 
-    return n*3+7;
+    return n * 3 + 7;
 }
 
 int main()
 {
     int n;
-    cin>>n;
-    
-    cout<<endl;
-    
-    cout<<ap(n)<<endl;
-   
+    cin >> n;
+
+    cout << endl;
+
+    cout << ap(n) << endl;
+
     return 0;
 }

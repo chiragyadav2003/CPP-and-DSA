@@ -1,0 +1,11 @@
+{
+  "files.associations": {
+    "iostream": "cpp",
+    "ostream": "cpp",
+    "*.tcc": "cpp",
+    "regex": "cpp",
+    "new": "cpp",
+    "bitset": "cpp"
+  },
+  "terminal.integrated.tabs.defaultColor": null
+}
