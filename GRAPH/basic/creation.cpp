@@ -1,63 +1,60 @@
 #include <iostream>
-// #include <unordered_map>
-// #include <list>
+#include <unordered_map>
+#include <list>
 
 using namespace std;
 
-// class graph
-// {
-// public:
-//     unordered_map<int, list<int>> adjList;
+class graph
+{
 
-//     void addEdge(int u, int v, bool direction)
-//     {
-//         // direction = 0  for undirected
-//         // direction = 1  for directed
+public:
+    unordered_map<int, list<int>> adj;
 
-//         adjList[u].push_back(v);
+    void addEdge(int u, int v, bool direction)
+    {
+        // direction == 0 =>undirected
+        // direction == 1 =>directed
+        adj[u].push_back(v);
 
-//         if (direction == 0)
-//         {
-//             adjList[v].push_back(u);
-//         }
-//     }
+        if (direction == 0)
+        {
+            adj[v].push_back(u);
+        }
+    }
 
-//     void print()
-//     {
-//         for (auto i : adjList)
-//         {
-//             cout << i.first << "->";
-//             for (auto j : i.second)
-//             {
-//                 cout << j << " , ";
-//             }
-//             cout << endl;
-//         }
-//     }
-// };
+    void printList()
+    {
+        for (auto i : adj)
+        {
+            cout << i.first << " -> ";
+            for (auto j : i.second)
+            {
+                cout << j << " ,";
+            }
+            cout << endl;
+        }
+    }
+};
 
 int main()
 {
-    cout << "hi";
-    // int n;
-    // cout << "enter number of node";
-    // cin >> n;
 
-    // int m;
-    // cout << "enter number of edges";
-    // cin >> m;
+    graph g;
 
-    // graph g;
+    int m;
+    cout << "enter number of edges :\n";
+    cin >> m;
 
-    // for (int i = 0; i < m; i++)
-    // {
-    //     int u, v;
-    //     cin >> u >> v;
+    for (int i = 0; i < m; i++)
+    {
+        int p, q;
+        cout << "enter nodes of edges : \n";
+        cin >> p >> q;
+        g.addEdge(p, q, 0);
+    }
 
-    //     g.addEdge(u, v, 0);
-    // }
-
-    // g.print();
+    cout << "list is : \n";
+    g.printList();
 
     return 0;
 }
