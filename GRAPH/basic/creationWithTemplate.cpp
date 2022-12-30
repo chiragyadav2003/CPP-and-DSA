@@ -2,12 +2,14 @@
 
 using namespace std;
 
+template <typename t>
+
 class graph
 {
 public:
-    unordered_map<int, list<int>> adjList;
+    unordered_map<t, list<t>> adjList;
 
-    void addEdge(int u, int v, bool direction)
+    void addEdge(t u, t v, bool direction)
     {
         // direction = 0  for undirected
         // direction = 1  for directed
@@ -44,8 +46,9 @@ int main()
     cout << "enter number of edges : ";
     cin >> m;
 
-    graph g;
+    graph<int> g;
 
+    cout << "enter edge pair for unordered graph storing int data : \n";
     for (int i = 0; i < m; i++)
     {
         int u, v;
@@ -53,8 +56,20 @@ int main()
 
         g.addEdge(u, v, 0);
     }
-
     g.print();
+
+    graph<char> g2;
+
+    cout << "enter edge pair for unordered graph storing character data : \n";
+    for (int i = 0; i < m; i++)
+    {
+        char u, v;
+        cin >> u >> v;
+
+        g2.addEdge(u, v, 0);
+    }
+
+    g2.print();
 
     return 0;
 }
